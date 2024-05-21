@@ -15,7 +15,7 @@ app.UseSwaggerUI();
 
 app.MapHub<ServerHub>("/test-server");
 
-var serverHub = app.Services.GetRequiredService<ServerHub>();
+var serverHub = app.Services.GetRequiredService<IHubContext<ServerHub>>();
 
 app.MapGet("send-signalr", async () =>
 {
